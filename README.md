@@ -1,6 +1,6 @@
 # flutter_bloc_practicing_repo
 
-A flutter application which includes a lot of examples about Bloc to learn Bloc efficiently. (Designs and layered architecture will be poor since the main target of this app is to learn bloc. Sorry for messy codes xd)
+A flutter application which includes a lot of examples about Bloc to learn Bloc efficiently. (Designs and layered architecture will be poor and not responsive since the main target of this app is to learn bloc. Sorry for messy codes xd)
 
 ## Getting Started
 
