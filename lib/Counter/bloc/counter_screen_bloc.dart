@@ -26,7 +26,7 @@ class CounterBlocApp extends StatelessWidget {
             height: 150,
           ),
           Center(
-            child: BlocBuilder<CounterBloc, int>(
+            child: BlocConsumer<CounterBloc, int>(
               builder: (context, snapshot) {
                 if (snapshot < 0) {
                   return Text(
@@ -44,6 +44,28 @@ class CounterBlocApp extends StatelessWidget {
                     style: TextStyle(fontSize: 40, color: Colors.green),
                   );
                 }
+              },
+              listener: (context, snapshot) {
+                showDialog(
+                  context: context,
+                  builder: (context) {
+                    return AlertDialog(
+                      title: Text("Wowww! You exceeded 10!"),
+                      content: Text("KAPPA"),
+                      actions: [
+                        TextButton(
+                          onPressed: () {
+                            Navigator.of(context).pop();
+                          },
+                          child: Text("gimme a break."),
+                        ),
+                      ],
+                    );
+                  },
+                );
+              },
+              listenWhen: (previousValue, currentValue) {
+                return currentValue == 10 && previousValue == currentValue - 1;
               },
             ),
           ),
